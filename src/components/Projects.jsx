@@ -5,22 +5,25 @@ function Projects() {
   const projects = [
     {
       title: "Event Booking System",
-      description: "Full-stack app with Stripe payments, QR code tickets, and admin dashboard.",
+      description:
+        "Full-stack app with Stripe payments, QR code tickets, and admin dashboard.",
       image: "/event.png",
-      link: "#"
+      link: "#",
     },
     {
       title: "Portfolio Website",
-      description: "Responsive portfolio built with React, Tailwind, and dark mode.",
+      description:
+        "Responsive portfolio built with React, Tailwind, and dark mode.",
       image: "/portfolio.png",
-      link: "#"
+      link: "#",
     },
     {
       title: "E-commerce Store",
-      description: "React + Node.js e-commerce app with cart and checkout.",
+      description:
+        "React + Node.js e-commerce app with cart and checkout.",
       image: "/ecommerce.png",
-      link: "#"
-    }
+      link: "#",
+    },
   ];
 
   return (
@@ -28,18 +31,20 @@ function Projects() {
       id="projects"
       className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
     >
-      <div className="container mx-auto px-6 text-center">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12 text-center">
+        {/* Heading */}
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-4xl font-bold text-indigo-600 dark:text-indigo-400 mb-12"
+          className="text-3xl sm:text-4xl font-bold text-indigo-600 dark:text-indigo-400 mb-12"
         >
           My Projects
         </motion.h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {/* Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -48,18 +53,21 @@ function Projects() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               whileHover={{ scale: 1.05 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden cursor-pointer"
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden cursor-pointer flex flex-col"
             >
+              {/* Image */}
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-48 object-cover"
+                className="w-full h-40 sm:h-48 object-cover"
               />
-              <div className="p-6">
-                <h3 className="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">
+
+              {/* Content */}
+              <div className="p-4 sm:p-6 flex flex-col flex-grow text-left">
+                <h3 className="text-lg sm:text-2xl font-semibold mb-2 text-gray-900 dark:text-white">
                   {project.title}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300 mb-4">
+                <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-4 flex-grow">
                   {project.description}
                 </p>
                 <a
